@@ -11,5 +11,6 @@
 angular
   .module('animRadioApp', [
     'ngAnimate',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ]);
