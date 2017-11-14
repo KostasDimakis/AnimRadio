@@ -1,0 +1,38 @@
+[
+  {
+    "artist": "ROTTENGRAFFTY",
+    "title": "70cm",
+    "imgUrl": "/images/ROTTENGRAFFTY-70cm.jpg",
+    "songUrl": "/songs/ROTTENGRAFFTY-70cm.mp3"
+  },
+  {
+    "artist": "JAM Project",
+    "title": "THE HERO !!",
+    "imgUrl": "/images/JAM-Project-THE-HERO!!.jpg",
+    "songUrl": "/songs/JAM-Project-THE-HERO-!!.mp3"
+  },
+  {
+    "artist": "Kiyoshi Hikawa",
+    "title": "Limit-Break x Survivor",
+    "imgUrl": "/images/Kiyoshi-Hikawa-Limit-Break-x-Survivor.png",
+    "songUrl": "/songs/Kiyoshi-Hikawa-Limit-Break-x-Survivor.mp3"
+  },
+  {
+    "artist": "Hironobu Kageyama",
+    "title": "Cha-La Head-Cha-La",
+    "imgUrl": "/images/Hironobu-Kageyama-Cha-La-Head-Cha-La.jpg",
+    "songUrl": "/songs/Hironobu-Kageyama-Cha-La-Head-Cha-La.mp3"
+  },
+  {
+    "artist": "Hiroshi Kitadani",
+    "title": "We Are",
+    "imgUrl": "/images/one-piece-we-are.jpg",
+    "songUrl": "/songs/one-piece-we-are.mp3"
+  },
+  {
+    "artist": "Kazuya Yoshii",
+    "title": "Cho-Zets☆Dynamic!",
+    "imgUrl": "/images/Kazuya-Yoshii-Cho-Zets-Dynamic!.jpg",
+    "songUrl": "/songs/Kazuya-Yoshii-Cho-Zets-Dynamic!.mp3"
+  }
+]
