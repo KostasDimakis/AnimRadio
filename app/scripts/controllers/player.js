@@ -9,9 +9,4 @@
  */
 angular.module('animRadioApp')
   .controller('PlayerCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });
