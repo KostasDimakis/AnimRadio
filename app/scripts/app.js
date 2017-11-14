@@ -18,8 +18,9 @@ angular
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-  .state('home', {
+  .state('player', {
     url: '/',
-    templateUrl: 'views/player.html'
+    templateUrl: 'views/player.html',
+    controller: 'PlayerCtrl as player'
   });
 }]);
