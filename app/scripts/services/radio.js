@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name animRadioApp.songDataProvider
+ * @name animRadioApp.radio
  * @description
- * # songDataProvider
+ * # radio
  * Service in the animRadioApp.
  */
 angular.module('animRadioApp')
-  .service('songDataProvider', function () {
+  .service('radio', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
   });

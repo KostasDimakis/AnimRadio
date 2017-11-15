@@ -8,6 +8,6 @@
  * Controller of the animRadioApp
  */
 angular.module('animRadioApp')
-  .controller('PlayerCtrl', ['audioPlayer', 'songDataProvider', function(player, songDataProvider) {
+  .controller('PlayerCtrl', ['audioPlayer', 'radio', function(player, radio) {
 
 }]);
