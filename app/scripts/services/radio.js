@@ -16,8 +16,9 @@ angular.module('animRadioApp')
    * @private
    */
   this._history = [];
+
   /**
-   * Return a promise that resolves an array of song objects
+   * Return a promise that resolves to an array of song objects
    * @type {Promise.<Array>}
    * @private
    */
@@ -46,10 +47,10 @@ angular.module('animRadioApp')
 
   /**
    * Return a promise that resolves to a song object
-   * @return {Promise.<Object>} Resolves to a song object
+   * @return {Promise.<Object>}
    */
   this.next = function() {
-    this._songs.then(songs => {
+    return this._songs.then(songs => {
       // if there are no songs return
       if (songs.length === 0 ) return;
 
@@ -58,17 +59,18 @@ angular.module('animRadioApp')
 
       return songs[song];
     });
-
-    /**
-     * Return a number between and including min, max.
-     * @param {number} min
-     * @param {number} max
-     * @return {number} min <= number <= max
-     */
-    function getRandomIntInclusive(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-    }
   };
+
+  /**
+   * Return a number between and including min, max.
+   * @param {number} min
+   * @param {number} max
+   * @return {number} min <= number <= max
+   */
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+  }
+
 }]);
