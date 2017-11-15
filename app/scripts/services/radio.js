@@ -22,17 +22,15 @@ angular.module('animRadioApp')
    * @type {Promise.<Array>}
    * @private
    */
-  this._songs = fetch('../data.json')
-    .then(response => {
+  this._songs = fetch('../data.json').then(response => {
       if (!response.ok) {
         let msg = response.status + ': ' + response.statusText;
         throw new Error(msg);
       }
       return response.json();
-    })
-    // parse the response and add window.location.origin where I have to
-    // NOTE: This `then` should be removed once I move my songs and images elsewhere
-    .then(data => {
+  }).then(data => {
+      // parse the response and add window.location.origin where I have to
+      // NOTE: This `then` should be removed once I move my songs and images elsewhere
       let songs = [];
       data.forEach(song => {
         songs.push({
@@ -45,8 +43,7 @@ angular.module('animRadioApp')
         });
       });
       return songs;
-    })
-    .catch(error => {
+  }).catch(error => {
       console.error('Oops something went wrong ', error);
   });
 
