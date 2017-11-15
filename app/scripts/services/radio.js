@@ -8,7 +8,7 @@
  * Service in the animRadioApp.
  */
 angular.module('animRadioApp')
-  .service('radio', ['$http', function ($http) {
+  .service('radio', function () {
   // AngularJS will instantiate a singleton by calling "new" on this function
   /**
    * Played songs
@@ -22,16 +22,20 @@ angular.module('animRadioApp')
    * @type {Promise.<Array>}
    * @private
    */
-  this._songs = $http({
-    method: 'GET',
-    url: '../data.json'
-  })
+  this._songs = fetch('../data.json')
+    .then(response => {
+      if (!response.ok) {
+        let msg = response.status + ': ' + response.statusText;
+        throw new Error(msg);
+      }
+      return response.json();
+    })
     // parse the response and add window.location.origin where I have to
     // NOTE: This `then` should be removed once I move my songs and images elsewhere
-    .then(response => {
-      var data = [];
-      response.data.forEach(song => {
-        data.push({
+    .then(data => {
+      let songs = [];
+      data.forEach(song => {
+        songs.push({
           artist: song.artist,
           title: song.title,
           // this is needed because they are stored inside my project
@@ -40,9 +44,10 @@ angular.module('animRadioApp')
           songUrl: window.location.origin + song.songUrl
         });
       });
-      return data;
-    }, response => {
-      console.error('Oops, something went wrong: ' + response.status + response.statusText)
+      return songs;
+    })
+    .catch(error => {
+      console.error('Oops something went wrong ', error);
   });
 
   /**
@@ -73,4 +78,4 @@ angular.module('animRadioApp')
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
   }
 
-}]);
+});
