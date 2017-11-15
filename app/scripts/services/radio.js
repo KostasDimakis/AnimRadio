@@ -11,12 +11,6 @@ angular.module('animRadioApp')
   .service('radio', ['$http', function ($http) {
   // AngularJS will instantiate a singleton by calling "new" on this function
   /**
-   * Currently playing song
-   * @type {number}
-   * @private
-   */
-  this._currentSong = 0;
-  /**
    * Played songs
    * @type {Array}
    * @private
@@ -59,10 +53,10 @@ angular.module('animRadioApp')
       // if there are no songs return
       if (songs.length === 0 ) return;
 
-      this._history.push(this._currentSong);
-      this._currentSong = getRandomIntInclusive(0, songs.length - 1);
+      let song = getRandomIntInclusive(0, songs.length - 1);
+      this._history.push(song);
 
-      return songs[this._currentSong];
+      return songs[song];
     });
 
     /**
