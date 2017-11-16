@@ -54,7 +54,9 @@ angular.module('animRadioApp')
   this.next = function() {
     return this._songs.then(songs => {
       // if there are no songs return
-      if (songs.length === 0 ) return;
+      if (songs.length === 0 ) {
+        return;
+      }
 
       let song = getRandomIntInclusive(0, songs.length - 1);
       this._history.push(song);
