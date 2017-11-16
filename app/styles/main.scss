@@ -19,3 +19,12 @@ html {
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+html,body, #app, main {
+  height: 100%;
+}
+
+main {
+  background: no-repeat center center fixed;
+  background-size: cover;
+}
