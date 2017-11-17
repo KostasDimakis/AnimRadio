@@ -22,13 +22,16 @@ angular.module('animRadioApp')
       songUrl: ''
     };
 
+    this.playing = false;
+
     this.duration = 0;
     this.time = 0;
 
     radio.next().then(song => {
       this.current = song;
       player.src = song.songUrl;
-      this.play();
+      player.play();
+      this.playing = true;
     });
 
     radio.next().then(song => {
@@ -42,11 +45,13 @@ angular.module('animRadioApp')
       });
     };
 
-    this.play = function() {
-      player.play();
-    };
-
-    this.pause = function() {
-      player.pause();
+    this.togglePlayPause = function() {
+      if (this.playing) {
+        player.pause();
+        this.playing = !this.playing;
+      } else {
+        player.play();
+        this.playing = !this.playing;
+      }
     };
 }]);
