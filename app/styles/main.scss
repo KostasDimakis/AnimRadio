@@ -8,6 +8,7 @@ $space-2: 1em;
 $space-3: 1.5em;
 $space-4: 2em;
 $space-5: 3em;
+$break: "screen and (min-width: 479px)";
 
 .p-1 {
   padding: $space-1;
@@ -121,9 +122,14 @@ progress::-moz-progress-bar {
 }
 
 .current {
+  background-color: white;
   top: 0;
   right: 0;
   left: 0;
+  @media #{$break} {
+    right: calc(50% - 200px);
+    left: calc(50% - 200px);
+  }
 }
 
 .flexbox {
@@ -141,6 +147,10 @@ progress::-moz-progress-bar {
   bottom: 0;
   right: 0;
   left: 0;
+  @media #{$break} {
+    right: calc(50% - 200px);
+    left: calc(50% - 200px);
+  }
 }
 
 .up-next {
