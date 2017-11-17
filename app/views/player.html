@@ -1,4 +1,13 @@
 <main style="background-image: url('{{player.current.imgUrl}}');">
+  <section class="current p-2 flexbox flexbox--column">
+    <p class="title flexbox__item--horizontally-centered">{{player.current.title}} - {{player.current.artist}}</p>
+    <progress class="progress flexbox__item--horizontally-centered" value="70" max="100">70 %</progress>
+    <div class="timers flexbox justify-between flexbox__item--horizontally-centered">
+      <span>{{player.time}}</span>
+      <span>{{player.duration}}</span>
+    </div>
+  </section>
+  <!--<section class="play-pause"></section>-->
   <section class="upcoming p-2">
     <h3 class="up-next">Up Next</h3>
     <div class="flexbox justify-between">
@@ -9,7 +18,7 @@
           <p class="artist">{{player.upcoming.artist}}</p>
         </div>
       </div>
-      <a ui-sref="#"><img width="64" height="64" ng-src="images/skip-next.svg" alt="Next"></a>
+      <a ui-sref="player"><img width="64" height="64" ng-src="images/skip-next.svg" alt="Next"></a>
     </div>
   </section>
 </main>
