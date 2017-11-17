@@ -142,6 +142,15 @@ progress::-moz-progress-bar {
   }
 }
 
+.play-pause {
+  width: 64px;
+  height: 64px;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  right: calc(50% - 32px);
+  bottom: calc(50% - 32px);
+}
+
 .flexbox {
   display: flex;
 }
