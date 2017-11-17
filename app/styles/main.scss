@@ -143,6 +143,8 @@ progress::-moz-progress-bar {
 }
 
 .play-pause {
+  border: none;
+  border-radius: 50%;
   width: 64px;
   height: 64px;
   top: calc(50% - 32px);
