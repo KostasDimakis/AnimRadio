@@ -1,3 +1,15 @@
-<main style="background-image: url('{{player.playing.imgUrl}}');">
-
+<main style="background-image: url('{{player.current.imgUrl}}');">
+  <section class="upcoming p-2">
+    <h3 class="up-next">Up Next</h3>
+    <div class="flexbox justify-between">
+      <div class="flexbox">
+        <img class="thumbnail" ng-src="{{player.upcoming.imgUrl}}" alt="{{player.upcoming.artist}}">
+        <div class="pr-1 pl-1">
+          <p class="title">{{player.upcoming.title}}</p>
+          <p class="artist">{{player.upcoming.artist}}</p>
+        </div>
+      </div>
+      <a ui-sref="#"><img width="64" height="64" ng-src="images/skip-next.svg" alt="Next"></a>
+    </div>
+  </section>
 </main>

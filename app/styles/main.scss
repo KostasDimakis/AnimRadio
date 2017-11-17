@@ -1,6 +1,62 @@
 // bower:scss
 // endbower
 
+// variables
+$progress-color: #3eb4aa;
+$space-1: 0.5em;
+$space-2: 1em;
+$space-3: 1.5em;
+$space-4: 2em;
+$space-5: 3em;
+
+.p-1 {
+  padding: $space-1;
+}
+.p-2 {
+  padding: $space-2;
+}
+.p-3 {
+  padding: $space-3;
+}
+.p-4 {
+  padding: $space-4;
+}
+.p-5 {
+  padding: $space-5;
+}
+
+.pl-1 {
+  padding-left: $space-1;
+}
+.pl-2 {
+  padding-left: $space-2;
+}
+.pl-3 {
+  padding-left: $space-3;
+}
+.pl-4 {
+  padding-left: $space-4;
+}
+.pl-5 {
+  padding-left: $space-5;
+}
+
+.pr-1 {
+  padding-right: $space-1;
+}
+.pr-2 {
+  padding-right: $space-2;
+}
+.pr-3 {
+  padding-right: $space-3;
+}
+.pr-4 {
+  padding-right: $space-4;
+}
+.pr-5 {
+  padding-right: $space-5;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -27,4 +83,70 @@ html,body, #app, main {
 main {
   background: no-repeat center center fixed;
   background-size: cover;
+}
+
+.title {
+  margin-top: 8px;
+  padding: 0;
+}
+
+.artist {
+  margin: 0;
+  padding: 0;
+}
+
+// progress bar
+progress {
+  height: 2px;
+  border: 0px none;
+  background-color: grey;
+  color: $progress-color;
+  border-radius: 25px;
+}
+progress::-webkit-progress-bar {
+  background-color: grey;
+  border-radius: 25px;
+}
+progress::-webkit-progress-value {
+  background-color: $progress-color;
+  border-radius: 25px;
+}
+progress::-moz-progress-bar {
+  background-color: $progress-color;
+  border-radius: 25px;
+}
+
+.current, .play-pause, .upcoming {
+  position: absolute;
+}
+
+.current {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.thumbnail {
+  width: 64px;
+  height: auto;
+  max-height: 64px;
+}
+
+.upcoming {
+  background-color: white;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.up-next {
+  margin-top: 0;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
