@@ -9,18 +9,6 @@
  */
 angular.module('animRadioApp')
   .controller('PlayerCtrl', ['audioPlayer', 'radio', function(player, radio) {
-    this.current = {
-      artist: '',
-      title: '',
-      imgUrl: '',
-      songUrl: ''
-    };
-    this.upcoming = {
-      artist: '',
-      title: '',
-      imgUrl: '',
-      songUrl: ''
-    };
 
     this.playing = false;
 
