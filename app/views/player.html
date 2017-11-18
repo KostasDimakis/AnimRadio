@@ -1,4 +1,5 @@
 <main style="background-image: url('{{player.current.imgUrl}}');">
+  <div class="glass-current"></div>
   <section class="current p-2 flexbox flexbox--column">
     <p class="title flexbox__item--horizontally-centered">{{player.current.title}} - {{player.current.artist}}</p>
     <progress class="progress flexbox__item--horizontally-centered" value="70" max="100">70 %</progress>
@@ -7,9 +8,11 @@
       <span>{{player.duration}}</span>
     </div>
   </section>
+  <div class="glass-play-pause"></div>
   <button class="play-pause" ng-click="player.togglePlayPause()">
     <img ng ng-src="{{player.playing === true && 'images/pause.svg' || 'images/play-arrow.svg'}}" alt="Pause">
   </button>
+  <div class="glass-upcoming"></div>
   <section class="upcoming p-2">
     <h3 class="up-next">Up Next</h3>
     <div class="flexbox justify-between">

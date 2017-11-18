@@ -132,7 +132,20 @@ progress::-moz-progress-bar {
 }
 
 .current {
-  background-color: white;
+  top: 0;
+  right: 0;
+  left: 0;
+  @media #{$break} {
+    right: calc(50% - 200px);
+    left: calc(50% - 200px);
+  }
+}
+
+.glass-current {
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.5);
+  filter: blur(5px);
+  height: 102px;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -143,7 +156,21 @@ progress::-moz-progress-bar {
 }
 
 .play-pause {
+  background-color: transparent;
   border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  right: calc(50% - 32px);
+  bottom: calc(50% - 32px);
+}
+
+.glass-play-pause {
+  position: absolute;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.5);
+  filter: blur(5px);
   border-radius: 50%;
   width: 64px;
   height: 64px;
@@ -166,14 +193,21 @@ progress::-moz-progress-bar {
   margin-right: auto;
 }
 
-.thumbnail {
-  width: 64px;
-  height: auto;
-  max-height: 64px;
+.upcoming {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  @media #{$break} {
+    right: calc(50% - 200px);
+    left: calc(50% - 200px);
+  }
 }
 
-.upcoming {
-  background-color: white;
+.glass-upcoming {
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.5);
+  filter: blur(5px);
+  height: 139.72px;
+  position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
@@ -189,4 +223,10 @@ progress::-moz-progress-bar {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.thumbnail {
+  width: 64px;
+  height: auto;
+  max-height: 64px;
 }
