@@ -3,6 +3,10 @@
 @import "helpers/variables";
 
 // space utilities
+.p-0 {
+  padding: 0;
+}
+
 .p-2 {
   padding: $space-2;
 }
@@ -15,6 +19,14 @@
   padding-right: $space-1;
 }
 
+.m-0 {
+  margin: 0;
+}
+
+.mt-1 {
+  margin-top: $space-1;
+}
+
 // old browser
 .browsehappy {
   margin: 0.2em 0;
@@ -23,25 +35,20 @@
   padding: 0.2em 0;
 }
 
+// use border-box
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 html, body {
-  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font: $font;
 }
 
 html,body, #app, main {
   height: 100%;
-}
-
-main {
-  background: no-repeat center center fixed;
-  background-size: cover;
 }
 
 .background-cover {
@@ -51,16 +58,6 @@ main {
   display: block;
   position: absolute;
   z-index: 0;
-}
-
-.title {
-  margin-top: 8px;
-  padding: 0;
-}
-
-.artist {
-  margin: 0;
-  padding: 0;
 }
 
 // progress bar
