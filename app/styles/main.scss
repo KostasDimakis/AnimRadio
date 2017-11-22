@@ -2,54 +2,20 @@
 // endbower
 @import "helpers/variables";
 
-.p-1 {
-  padding: $space-1;
-}
+// space utilities
 .p-2 {
   padding: $space-2;
-}
-.p-3 {
-  padding: $space-3;
-}
-.p-4 {
-  padding: $space-4;
-}
-.p-5 {
-  padding: $space-5;
 }
 
 .pl-1 {
   padding-left: $space-1;
 }
-.pl-2 {
-  padding-left: $space-2;
-}
-.pl-3 {
-  padding-left: $space-3;
-}
-.pl-4 {
-  padding-left: $space-4;
-}
-.pl-5 {
-  padding-left: $space-5;
-}
 
 .pr-1 {
   padding-right: $space-1;
 }
-.pr-2 {
-  padding-right: $space-2;
-}
-.pr-3 {
-  padding-right: $space-3;
-}
-.pr-4 {
-  padding-right: $space-4;
-}
-.pr-5 {
-  padding-right: $space-5;
-}
 
+// old browser
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
