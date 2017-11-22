@@ -1,15 +1,6 @@
 // bower:scss
 // endbower
-
-// variables
-$progress-color: #3eb4aa;
-$space-1: 0.5em;
-$space-2: 1em;
-$space-3: 1.5em;
-$space-4: 2em;
-$space-5: 3em;
-$break: "screen and (min-width: 479px)";
-$progress-width: 50%;
+@import "helpers/variables";
 
 .p-1 {
   padding: $space-1;
