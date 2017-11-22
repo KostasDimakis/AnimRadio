@@ -1,4 +1,5 @@
-<main style="background-image: url('{{player.current.imgUrl}}');">
+<main>
+  <img class="background-cover" ng-src="{{player.current.imgUrl}}" alt="{{player.current.name}}">
   <div class="glass-current"></div>
   <section class="current p-2 flexbox flexbox--column">
     <p class="title flexbox__item--horizontally-centered">{{player.current.title}} - {{player.current.artist}}</p>
