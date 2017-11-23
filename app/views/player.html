@@ -1,21 +1,18 @@
 <main>
   <img class="background-cover" ng-src="{{player.current.imgUrl}}" alt="{{player.current.name}}">
-  <div class="glass-current"></div>
   <section class="current p-2 flexbox flexbox--column">
-    <p class="mt-1 p-0 flexbox__item--horizontally-centered">{{player.current.title}} - {{player.current.artist}}</p>
-    <progress class="progress flexbox__item--horizontally-centered" value="70" max="100">70 %</progress>
-    <div class="timers mt-1 flexbox justify-between flexbox__item--horizontally-centered">
+    <p class="mt-1 p-0 horizontally-auto-centered">{{player.current.title}} - {{player.current.artist}}</p>
+    <progress class="progress horizontally-auto-centered" value="70" max="100">70 %</progress>
+    <div class="timers mt-1 flexbox justify-between horizontally-auto-centered">
       <span>{{player.time}}</span>
       <span>{{player.duration}}</span>
     </div>
   </section>
-  <div class="glass-play-pause"></div>
-  <button class="play-pause" ng-click="player.togglePlayPause()">
-    <img style="width: 100%; height: 100%;" ng-src="{{player.playing === true && 'images/pause.svg' || 'images/play-arrow.svg'}}" alt="Pause">
+  <button class="controls-button border-0 play-pause" ng-click="player.togglePlayPause()">
+    <img ng-src="{{player.playing === true && 'images/pause.svg' || 'images/play-arrow.svg'}}" alt="Pause">
   </button>
-  <div class="glass-upcoming"></div>
   <section class="upcoming p-2">
-    <h3 class="up-next">Up Next</h3>
+    <h3 class="mt-0">Up Next</h3>
     <div class="flexbox justify-between">
       <div class="flexbox">
         <img class="thumbnail" ng-src="{{player.upcoming.imgUrl}}" alt="{{player.upcoming.artist}}">
@@ -24,7 +21,9 @@
           <p class="p-0 m-0">{{player.upcoming.artist}}</p>
         </div>
       </div>
-      <a ui-sref="player"><img width="64" height="64" ng-src="images/skip-next.svg" alt="Next"></a>
+      <button class="border-0 controls-button">
+        <img ng-src="images/skip-next.svg" alt="Next">
+      </button>
     </div>
   </section>
 </main>

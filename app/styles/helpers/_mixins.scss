@@ -1,0 +1,26 @@
+@mixin progress($progress-background, $progress-color, $progress-border-radius) {
+  progress {
+    background-color: $progress-background;
+    color: $progress-color;
+    border-radius: $progress-border-radius;
+  }
+  progress::-webkit-progress-bar {
+    background-color: $progress-background;
+    border-radius: $progress-border-radius;
+  }
+  progress::-webkit-progress-value {
+    background-color: $progress-color;
+    border-radius: $progress-border-radius;
+  }
+  progress::-moz-progress-bar {
+    background-color: $progress-color;
+    border-radius: $progress-border-radius;
+  }
+}
+
+@mixin absolute-position-top-or-bottom($position) {
+  position: absolute;
+  #{$position}: 0;
+  right: 0;
+  left: 0;
+}
