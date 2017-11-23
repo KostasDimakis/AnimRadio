@@ -9,7 +9,7 @@
     </div>
   </section>
   <button class="controls-button border-0 play-pause" ng-click="player.togglePlayPause()">
-    <img ng-src="{{player.playing === true && 'images/pause.svg' || 'images/play-arrow.svg'}}" alt="Pause">
+    <img ng-src="{{player.playing() === true && 'images/pause.svg' || 'images/play-arrow.svg'}}" alt="Pause">
   </button>
   <section class="upcoming p-2">
     <h3 class="mt-0">Up Next</h3>

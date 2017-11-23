@@ -7,10 +7,8 @@
  * # PlayerCtrl
  * Controller of the animRadioApp
  */
-angular.module('animRadioApp')
-  .controller('PlayerCtrl', ['audioPlayer', 'radio', function(player, radio) {
-
-    this.playing = false;
+angular.module('animRadioApp').controller('PlayerCtrl', [
+  'audioPlayer', 'radio', function(player, radio) {
 
     this.duration = 0;
     this.time = 0;
@@ -19,7 +17,6 @@ angular.module('animRadioApp')
       this.current = song;
       player.src = song.songUrl;
       player.play();
-      this.playing = true;
     });
 
     radio.next().then(song => {
@@ -33,13 +30,16 @@ angular.module('animRadioApp')
       });
     };
 
+    this.playing = function() {
+      return !player.paused;
+    };
+
     this.togglePlayPause = function() {
-      if (this.playing) {
-        player.pause();
-        this.playing = !this.playing;
-      } else {
+      if (player.paused) {
         player.play();
-        this.playing = !this.playing;
+      } else {
+        player.pause();
       }
     };
-}]);
+  },
+]);
