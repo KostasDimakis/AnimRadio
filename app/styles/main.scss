@@ -84,7 +84,8 @@ html,body, #app, main {
   // up with its width
   width: $progress-width;
 }
-
+// TODO: These 3 classes need some rethinking.
+// They can be further sub-categorized
 .current {
   @include absolute-position-top-or-bottom('top');
   @media #{$larger-than-mobile} {
