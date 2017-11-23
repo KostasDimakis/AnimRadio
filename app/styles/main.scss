@@ -1,6 +1,7 @@
 // bower:scss
 // endbower
 @import "helpers/variables";
+@import "helpers/placeholders";
 
 // space utilities
 .p-0 {
@@ -26,6 +27,10 @@
 .mt-1 {
   margin-top: $space-1;
 }
+// other utlities
+.border-0 {
+  border: 0px none;
+}
 
 // old browser
 .browsehappy {
@@ -43,6 +48,7 @@ html {
   box-sizing: inherit;
 }
 
+// apply whole project css
 html, body {
   font: $font;
 }
@@ -51,53 +57,49 @@ html,body, #app, main {
   height: 100%;
 }
 
+// background image css
 .background-cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  position: absolute;
+  @extend %explicitly-positioned;
   z-index: 0;
 }
 
 // progress bar
 progress {
-  height: 2px;
-  border: 0px none;
-  background-color: grey;
-  color: $progress-color;
-  border-radius: 25px;
+  background-color: $progress-background;
+  color: $color-app-primary;
+  border-radius: $progress-border-radius;
 }
 progress::-webkit-progress-bar {
-  background-color: grey;
-  border-radius: 25px;
+  background-color: $progress-background;
+  border-radius: $progress-border-radius;
 }
 progress::-webkit-progress-value {
-  background-color: $progress-color;
-  border-radius: 25px;
+  background-color: $color-app-primary;
+  border-radius: $progress-border-radius;
 }
 progress::-moz-progress-bar {
-  background-color: $progress-color;
-  border-radius: 25px;
+  background-color: $color-app-primary;
+  border-radius: $progress-border-radius;
 }
-
 .progress {
   width: $progress-width;
+  height: $progress-height;
 }
 
 .timers {
+  // progress counter should be at the start,
+  // duration indicator should be at the end
+  // of the progress bar. Hence we are keeping
+  // up with its width
   width: $progress-width;
-  margin-top: $space-1;
-}
-
-.current, .play-pause, .upcoming {
-  position: absolute;
 }
 
 .current {
-  top: 0;
-  right: 0;
-  left: 0;
+  @extend %explicitly-positioned--top-half;
   @media #{$break} {
     right: calc(50% - 200px);
     left: calc(50% - 200px);
@@ -108,10 +110,7 @@ progress::-moz-progress-bar {
   opacity: 0.75;
   background: linear-gradient(to bottom right, #E0E0E0, #f5f5f5);
   height: 102px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
+  @extend %explicitly-positioned--top-half;
   @media #{$break} {
     right: calc(50% - 200px);
     left: calc(50% - 200px);
@@ -119,6 +118,7 @@ progress::-moz-progress-bar {
 }
 
 .play-pause {
+  @extend %explicitly-positioned;
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -131,7 +131,7 @@ progress::-moz-progress-bar {
 }
 
 .glass-play-pause {
-  position: absolute;
+  @extend %explicitly-positioned;
   opacity: 0.75;
   background: linear-gradient(to bottom right, #E0E0E0, #f5f5f5);
   border-radius: 50%;
@@ -157,9 +157,7 @@ progress::-moz-progress-bar {
 }
 
 .upcoming {
-  bottom: 0;
-  right: 0;
-  left: 0;
+  @extend %explicitly-positioned--bottom-half;
   @media #{$break} {
     right: calc(50% - 200px);
     left: calc(50% - 200px);
@@ -170,10 +168,7 @@ progress::-moz-progress-bar {
   opacity: 0.75;
   background: linear-gradient(to bottom right, #E0E0E0, #f5f5f5);
   height: 139.72px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  @extend %explicitly-positioned--bottom-half;
   @media #{$break} {
     right: calc(50% - 200px);
     left: calc(50% - 200px);

@@ -1,0 +1,17 @@
+%explicitly-positioned {
+  position: absolute;
+}
+
+%explicitly-positioned--top-half {
+  @extend %explicitly-positioned;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+%explicitly-positioned--bottom-half {
+  @extend %explicitly-positioned;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
