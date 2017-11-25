@@ -28,6 +28,14 @@ angular.module('animRadioApp').controller('PlayerCtrl', [
       radio.next().then(song => {
         this.upcoming = song;
       });
+      // continue playing if it was playing
+      if (!player.paused) {
+        player.src = this.current.songUrl;
+        player.play();
+      } else {
+        // don't play if it was paused
+        player.src = this.current.songUrl;
+      }
     };
 
     this.playing = function() {
