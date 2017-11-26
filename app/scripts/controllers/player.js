@@ -19,10 +19,14 @@ angular.module('animRadioApp').controller('PlayerCtrl', [
       player.play();
     });
 
-    // // TODO: This
-    // player.addEventListener('ended', () => {
-    //   this.next();
-    // });
+    player.addEventListener('ended', () => {
+      this.current = this.upcoming;
+      radio.next().then(song => {
+        this.upcoming = song;
+      });
+      player.src = this.current.songUrl;
+      player.play();
+    });
 
     radio.next().then(song => {
       this.upcoming = song;
