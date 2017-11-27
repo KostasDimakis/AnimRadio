@@ -13,23 +13,33 @@ angular.module('animRadioApp').controller('PlayerCtrl', [
     this.duration = 0;
     this.time = 0;
 
-    radio.next().then(song => {
-      this.current = song;
-      player.src = song.songUrl;
-      player.play();
-    });
+    /**
+     * Initialize player with first 2 songs and start playing
+     */
+    (() => {
+      // Get a song and start listening
+      radio.next().then(song => {
+        this.current = song;
+        player.src = song.songUrl;
+        player.play();
+      });
+      // Get the upcoming song
+      radio.next().then(song => {
+        this.upcoming = song;
+      });
+    })();
 
+    /**
+     * Listen for when a song ends and play the next one
+     */
     player.addEventListener('ended', () => {
       this.current = this.upcoming;
       radio.next().then(song => {
         this.upcoming = song;
       });
+      // continue playing the new song
       player.src = this.current.songUrl;
       player.play();
-    });
-
-    radio.next().then(song => {
-      this.upcoming = song;
     });
 
     this.next = function() {
