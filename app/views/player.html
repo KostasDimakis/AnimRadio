@@ -2,11 +2,11 @@
   <img class="background-cover" ng-src="{{player.current.imgUrl}}" alt="{{player.current.name}}">
   <section class="current p-2 flexbox flexbox--column">
     <p class="mt-1 p-0 horizontally-auto-centered">{{player.current.title}} - {{player.current.artist}}</p>
-    <progress class="progress horizontally-auto-centered" value="70" max="100">70 %</progress>
-    <div class="timers mt-1 flexbox justify-between horizontally-auto-centered">
-      <span>{{player.time}}</span>
-      <span>{{player.duration}}</span>
-    </div>
+    <!--<progress class="progress horizontally-auto-centered" value="70" max="100">70 %</progress>-->
+    <!--<div class="timers mt-1 flexbox justify-between horizontally-auto-centered">-->
+      <!--<span>{{player.time}}</span>-->
+      <!--<span>{{player.duration}}</span>-->
+    <!--</div>-->
   </section>
   <button class="controls-button border-0 play-pause" ng-click="player.togglePlayPause()">
     <img ng-src="{{player.playing() === true && 'images/pause.svg' || 'images/play-arrow.svg'}}" alt="Pause">
