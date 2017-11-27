@@ -42,6 +42,9 @@ angular.module('animRadioApp').controller('PlayerCtrl', [
       player.play();
     });
 
+    /**
+     * Next Song button press
+     */
     this.next = function() {
       this.current = this.upcoming;
       radio.next().then(song => {
