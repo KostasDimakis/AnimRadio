@@ -12,7 +12,8 @@ angular
   .module('animRadioApp', [
     'ngAnimate',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'firebase'
   ])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
