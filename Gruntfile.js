@@ -413,8 +413,6 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'manifest.json',
             '*.html',
-            'data.json',
-            'songs/*.mp3',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
           ]
