@@ -10,6 +10,7 @@
 angular.module('animRadioApp').controller('PlayerCtrl', [
   'audioPlayer', 'radio', function(player, radio) {
 
+    // TODO: Implement progress and timers
     // this.duration = 0;
     // this.time = 0;
     //
