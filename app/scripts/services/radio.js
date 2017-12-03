@@ -43,7 +43,7 @@ angular.module('animRadioApp')
       let songIndex = getRandomIntInclusive(0, songs.length - 1);
       this._history.push(songIndex);
 
-      return convertStorageRefToUrl(songs[songIndex]);
+      return convertStorageRefsToUrls(songs[songIndex]);
     });
   };
 
@@ -64,7 +64,7 @@ angular.module('animRadioApp')
    * @param {Object} song
    * @return {Promise.<Object>}
    */
-  function convertStorageRefToUrl(song) {
+  function convertStorageRefsToUrls(song) {
     // resolve the urls
     const promises = [
       storage.refFromURL(song.imgLocation).getDownloadURL(),
