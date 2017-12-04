@@ -18,7 +18,6 @@ angular.module('animRadioApp').controller('PlayerCtrl', [
       radio.next().then(song => {
         this.current = song;
         player.src = song.songUrl;
-        player.play();
       });
       // Get the upcoming song
       radio.next().then(song => {
